@@ -1,0 +1,48 @@
+public class solution {
+
+       public static void main(string[] args) {
+              double num[] = {2.03, 8.56, 12.05, 86.3};
+              double sum = 0;
+              for (int i = 0; i < num.length; i++) {
+                      sum = sum + num[i];
+              }
+              double average = sum / num.length;
+              system.out.println(sum);
+              system.out.println(average);
+       }
+}
+
+
+
+
+/ 1/maximum and minimum elements in an integer array//
+public class arrMinMax {
+
+        public static int getMax(int num[]) {
+               int maxElement = num[0];
+               for (int i = 1; i < num.length; i++) {
+                       if (maxElement < num[i]) {
+                               maxElement = num[i];
+                       }
+                       return maxElement;
+        }
+        
+        public static int getMin(int num[]) {
+                 int minElement = num[0];
+                 for (int i = 1; i < num.length; i++) {
+                         if (minElement > num[i]) [
+                                 minElement = num[i];
+                         }        
+                 }
+                 return minElement;
+        }
+        
+        public static void main(string[] args) [
+                int num[] = new int[]{8, 78, 10, 33};
+                int max = getMax(num);
+                int min = getMin(num);
+                System.out.println("Maximum element is " + max);
+                System.out.println("Mininum element is " + min);
+        }
+ }
+ 
