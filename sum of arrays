@@ -1,0 +1,9 @@
+public class solutions{
+        public static void main(string[] args) [
+        int sum = 0;
+        for (int nu : nubers ) {
+             sum = sum + num;
+        }
+        return sum;
+        
+}        
