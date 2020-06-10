@@ -1,0 +1,32 @@
+class Result {
+
+/*
+* Complete the 'maxXor' function below.
+*
+* The function is expected to return an INTEGER.
+* The function accepts following parameters:
+* 1. INTEGER lo
+* 2. INTEGER hi
+* 3. INTEGER k
+*/
+
+public static int maxXor(int lo, int hi, int k) {
+int i,j;
+int big=0;
+int temp;
+for (i=lo;i<hi;i++)
+{
+for (j=lo+1;j<=hi;j++)
+{
+temp = i^j;
+if (temp<=k&&big<temp)
+{
+big=temp;
+}
+}
+}
+return big;
+
+}
+
+}
