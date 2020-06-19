@@ -1,0 +1,30 @@
+class Result {
+
+    /*
+     * Complete the 'kSub' function below.
+     *
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY nums
+     */
+
+    public static long kSub(int k, List<Integer> nums) {
+    // Write your code here
+        int [] sum = new int[nums.size()];
+        long count = 0;    
+        sum[0] = nums.get(0); 
+        for(int i = 1; i < nums.size(); i++){
+            sum[i] = sum[i-1] + nums.get(i);
+        }
+        int [] val = new int[k];      
+        for(int i = 0; i < sum.length; i++){       
+            int mod = sum[i] % k;
+            if(mod == 0)
+                count++;
+            count += val[mod];
+            val[mod] += 1;        
+        }
+        return count;
+    }
+}
