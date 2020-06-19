@@ -1,0 +1,34 @@
+class Result {
+
+    /*
+     * Complete the 'condense' function below.
+     *
+     * The function is expected to return an INTEGER_SINGLY_LINKED_LIST.
+     * The function accepts INTEGER_SINGLY_LINKED_LIST head as parameter.
+     */
+
+    /*
+     * For your reference:
+     *
+     * SinglyLinkedListNode {
+     *     int data;
+     *     SinglyLinkedListNode next;
+     * }
+     *
+     */
+
+    public static SinglyLinkedListNode condense(SinglyLinkedListNode head) {
+    // Write your code here
+         SinglyLinkedListNode node=head;
+    SinglyLinkedList list=new SinglyLinkedList();
+    HashSet<Integer> set=new HashSet<Integer>();
+    while(node!=null){
+        if(!set.contains(node.data)){
+            set.add(node.data);
+            list.insertNode(node.data);
+        }
+        node=node.next;
+      }
+      return list.head;
+      }
+    }
