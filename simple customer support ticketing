@@ -1,0 +1,47 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    // Complete the braces function below.
+    public static boolean isBalanced(String expression) {
+      Stack<Character> st=new Stack<Character>();
+        int i;
+        for(i=0;i<expression.length();i++){
+            if(expression.charAt(i)=='(' || expression.charAt(i)=='[' || expression.charAt(i)=='{')
+                st.push(expression.charAt(i));
+            else{
+                if(!st.isEmpty() && expression.charAt(i)==')' && st.peek()=='(')
+                    st.pop();
+                else if(!st.isEmpty() && expression.charAt(i)==']' && st.peek()=='[')
+                    st.pop();
+                else if(!st.isEmpty() && expression.charAt(i)=='}' && st.peek()=='{')
+                    st.pop();
+                else
+                    break;
+            }
+        }
+        if(i==expression.length() && st.isEmpty())
+            return true;
+        return false;
+     }
+  
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++) {
+            String expression = in.next();
+            boolean answer = isBalanced(expression);
+            if(answer)
+                System.out.println("YES");
+            else System.out.println("NO");
+        }
+    }
+}
